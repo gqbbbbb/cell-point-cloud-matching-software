@@ -1,0 +1,5 @@
+{
+    "origin_path": "E:/gqb_workspace/cell_matching/vivo/DataForPointCloudReg/ROIMasks_exvivo/ROIMasks_exvivo_1.csv",
+    "target_path": "E:/gqb_workspace/cell_matching/vivo/DataForPointCloudReg/ROIMasks_invivo/ROIMasks_invivo_1.csv",
+    "output_folder": "E:/gqb_workspace/cell_matching/vivo/DataForPointCloudReg/match_result"
+}
