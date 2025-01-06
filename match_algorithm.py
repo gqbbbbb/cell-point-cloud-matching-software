@@ -12,15 +12,15 @@ def dynamic_max_distance(points):
 
 def exact_match_hard(df_origin, df_target):
     """
-    匹配两组三维点，输出符合最大距离限制的唯一匹配点对。
+    Match two sets of 3D points and output a unique matching point pair that meets the maximum distance limit
 
-    参数:
-        df_origin (pd.DataFrame): 第一组点集，包含列 ['Id', 'X', 'Y', 'Z']。
-        df_target (pd.DataFrame): 第二组点集，包含列 ['Id', 'X', 'Y', 'Z']。
-        max_distance (float): 最大匹配距离限制。
+    input parameters:
+        df_origin (pd.DataFrame): First set of points, containing columns ['Id', 'X', 'Y', 'Z']
+        df_target (pd.DataFrame): Second set of points, containing columns ['Id', 'X', 'Y', 'Z']
+        max_distance (float): Maximum matching distance limit
 
-    返回:
-        pd.DataFrame: 包含匹配结果的 DataFrame，每行包括:
+    return:
+        pd.DataFrame: DataFrame containing the matching result, each line including:
             ['Id_origin', 'X_origin', 'Y_origin', 'Z_origin',
              'Id_target', 'X_target', 'Y_target', 'Z_target']
     """

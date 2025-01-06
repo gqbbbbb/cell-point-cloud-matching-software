@@ -27,7 +27,7 @@ class MatchWindow:
     def __init__(self):
         # Create and place widgets
         self.root = tk.Tk()
-        self.root.title("匹配程序")
+        self.root.title("Match Program")
 
         # Default step sizes
         self.translation_step = 5
@@ -84,7 +84,7 @@ class MatchWindow:
         self.root.rowconfigure(10, weight=1)
 
         # file widgets
-        tk.Label(self.root, text="选择原坐标:").grid(row=0, column=0, padx=10, pady=10, sticky='e')
+        tk.Label(self.root, text="Origin Points:").grid(row=0, column=0, padx=10, pady=10, sticky='e')
         self.origin_file_var = tk.StringVar()
         tk.Entry(self.root, textvariable=self.origin_file_var, width=50).grid(row=0, column=1, columnspan=7, padx=10,
                                                                               pady=10,
@@ -92,7 +92,7 @@ class MatchWindow:
         tk.Button(self.root, text="Browse...", command=self.select_origin_path).grid(row=0, column=8, padx=10, pady=10,
                                                                                      sticky='w')
 
-        tk.Label(self.root, text="选择目标坐标:").grid(row=1, column=0, padx=10, pady=10, sticky='e')
+        tk.Label(self.root, text="Target Points:").grid(row=1, column=0, padx=10, pady=10, sticky='e')
         self.target_file_var = tk.StringVar()
         tk.Entry(self.root, textvariable=self.target_file_var, width=50).grid(row=1, column=1, columnspan=7, padx=10,
                                                                               pady=10,
@@ -100,7 +100,7 @@ class MatchWindow:
         tk.Button(self.root, text="Browse...", command=self.select_target_path).grid(row=1, column=8, padx=10, pady=10,
                                                                                      sticky='w')
 
-        tk.Label(self.root, text="选择输出路径:").grid(row=2, column=0, padx=10, pady=10, sticky='e')
+        tk.Label(self.root, text="Output Path:").grid(row=2, column=0, padx=10, pady=10, sticky='e')
         self.output_folder_var = tk.StringVar()
         tk.Entry(self.root, textvariable=self.output_folder_var, width=50).grid(row=2, column=1, columnspan=7, padx=10,
                                                                                 pady=10,
@@ -109,7 +109,7 @@ class MatchWindow:
                                                                                        pady=10,
                                                                                        sticky='w')
 
-        tk.Label(self.root, text="选择匹配方式:").grid(row=3, column=0, padx=10, pady=10, sticky='e')
+        tk.Label(self.root, text="Match Method:").grid(row=3, column=0, padx=10, pady=10, sticky='e')
         tk.Radiobutton(self.root, text="rigid", value=0, variable=self.algorithm).grid(row=3, column=1, padx=10, pady=10,
                                                                                   sticky='e')
         tk.Radiobutton(self.root, text="non-rigid", value=1, variable=self.algorithm).grid(row=3, column=2, padx=10, pady=10,
@@ -239,9 +239,9 @@ class MatchWindow:
 
     # point control function
     """
-    针对所有点的操作会被记录缓存
-    针对局部点的操作不会被记录
-    删除操作会直接对原始数据进行
+    Operations on all points are logged in the cache
+    Operations on local points are not logged
+    The deletion operation is performed directly on both origin points and target points
     """
     def auto_center(self):
         x, y = self.transformed_data['X'], self.transformed_data['Y']
